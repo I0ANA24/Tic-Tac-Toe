@@ -1,4 +1,5 @@
 body {
+    justify-content: center;
     padding: 5vh 10vw 35vh;
 }
 
@@ -89,7 +90,7 @@ input::placeholder {
     box-shadow: 0px 0px 10px 1px #f2dd57;
 }
 
-#start-game-button {
+.button {
     font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
     height: 45px;
     width: 170px;
@@ -101,9 +102,10 @@ input::placeholder {
     color: black;
 }
 
-#start-game-button:hover {
+.button:hover {
     cursor: pointer;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 100px 0px rgba(63, 207, 207, 0.407);
 }
 
 @media (max-width: 500px) {

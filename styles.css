@@ -12,10 +12,24 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
+}
+
+.title1 {
+    color: #5800FF;
+    text-shadow: 2px 2px 5px #5d2eb3;
+}
+
+.title2 {
+    color: aqua;
+    text-shadow: 2px 2px 5px rgb(63, 207, 207);
+}
+
+.title3 {
+    color: rgb(215, 186, 43);
+    text-shadow: 2px 2px 2px #f2dd57;
 }
 
 .letterX {

@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="game.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./game.css">
 </head>
 <body>
     <header class="scores">
         <div class="player1-score">
-            <p id="p1">Player 1</p>
-            <p id="p1-score">0</p>
+            <p id="p1" class="title1">Player 1</p>
+            <p id="p1-score" class="title1">0</p>
         </div>
         <div class="draws-score">
-            <p id="dr">Draws</p>
-            <p id="dr-score">0</p>
+            <p id="dr" class="title2">Draws</p>
+            <p id="dr-score" class="title2">0</p>
         </div>
         <div class="player2-score">
-            <p id="p2">Player 2</p>
-            <p id="p2-score">0</p>
+            <p id="p2" class="title3">Player 2</p>
+            <p id="p2-score" class="title3">0</p>
         </div>
     </header>
     <main class="tic-tac-toe-board">
@@ -40,12 +41,12 @@
         <div class="tic-tac-toe-cell"></div>
     </main>
     <footer class="restart-modal-reset">
-        <button id="restart">Restart</button>
+        <button id="restart" class="button">Restart</button>
         <div class="modal">
-            <p class="letterX">X</p>
+            <p class="letterX aqua-color">X</p>
             <p class="letterO">O</p>
         </div>
-        <button id="reset">Reset</button>
+        <button id="reset" class="button" onclick="location.href='./index.html'">Reset</button>
     </footer>
     <div class="github-container">
         <a href="https://github.com/I0ANA24/Tic-Tac-Toe" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
