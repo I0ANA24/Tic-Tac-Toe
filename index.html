@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -15,56 +16,21 @@
 <body>
     <div class="first-page-container">
         <h1 id="title"><span class="title1">TIC</span> <span class="title2">TAC</span> <span class="title3">TOE</span></h1>
-        <div class="first-page-content">
+        <main class="first-page-content">
             <div class="first-page-content-players">
                 <div class="left-content">
-                    <label for="nickname1" id="letterX">X</label>
+                    <label for="nickname1" class="letterX">X</label>
                     <input type="text" name="Nickname1" placeholder="Nickname 1" id="nickname1" required>
                 </div>
                 <div class="right-content">
-                    <label for="nickname2" id="letterO">O</label>
+                    <label for="nickname2" class="letterO">O</label>
                     <input type="text" name="Nickname2" placeholder="Nickname 2" id="nickname2" required>
                 </div>
             </div>
-            <button type="button" id="start-game-button">Start Game</button>
-        </div>
+            <button type="button" id="start-game-button" onclick="location.href='./game.html'">Start Game</button>
+        </main>
     </div>
 
-    <div class="second-page-container">
-        <div class="scores">
-            <div class="player1-score">
-                <p id="p1">Player 1</p>
-                <p id="p1-score">0</p>
-            </div>
-            <div class="draws-score">
-                <p id="dr">Draws</p>
-                <p id="dr-score">0</p>
-            </div>
-            <div class="player2-score">
-                <p id="p2">Player 2</p>
-                <p id="p2-score">0</p>
-            </div>
-        </div>
-        <div class="tic-tac-toe-board">
-            <div class="tic-tac-toe-cell"></div>
-            <div class="tic-tac-toe-cell"></div>
-            <div class="tic-tac-toe-cell"></div>
-            <div class="tic-tac-toe-cell"></div>
-            <div class="tic-tac-toe-cell"></div>
-            <div class="tic-tac-toe-cell"></div>
-            <div class="tic-tac-toe-cell"></div>
-            <div class="tic-tac-toe-cell"></div>
-            <div class="tic-tac-toe-cell"></div>
-        </div>
-        <div class="restart-modal-reset">
-            <button id="restart">Restart</button>
-            <div class="modal">
-                <p>X</p>
-                <p>O</p>
-            </div>
-            <button id="reset">Reset</button>
-        </div>
-    </div>
     <div class="github-container">
         <a href="https://github.com/I0ANA24/Tic-Tac-Toe" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
         <div class="github-tooltip">GitHub</div>

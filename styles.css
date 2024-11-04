@@ -15,122 +15,17 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 5vh 10vw 35vh;
     overflow: hidden;
 }
 
-.first-page-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#title {
-    font-size: 2.5em;
-    color: aqua;
-    word-spacing: 5px;
-    letter-spacing: 5px;
-    margin-top: 10vh;
-}
-
-.title1 {
-    color: #5800FF;
-    text-shadow: 2px 2px 5px #5d2eb3;
-}
-
-.title2 {
-    color: aqua;
-    text-shadow: 2px 2px 5px rgb(63, 207, 207);
-}
-
-.title3 {
-    color: rgb(215, 186, 43);
-    text-shadow: 2px 2px 2px #f2dd57;
-}
-
-.first-page-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5vh;
-}
-
-.first-page-content-players {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.left-content, .right-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-}
-
-#letterX, #letterO {
-    font-size: 2em;
-}
-
-#letterX {
+.letterX {
     color: #702eec;
     text-shadow: 2px 2px 5px #5d2eb3;
 }
 
-#letterO {
+.letterO {
     color: rgb(218, 197, 92);
     text-shadow: 2px 2px 2px #f2dd57;
-}
-
-input {
-    font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
-    height: 40px;
-    width: 200px;
-    background-color: transparent;
-    border: 3px solid aqua;
-    border-radius: 10px;
-    padding: 18px 10px;
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: 500;
-    outline: none;
-    color: aqua;
-    text-shadow: 0px 0px 20px rgb(123, 234, 234);
-    box-shadow: 0px 0px 10px 0px rgb(63, 207, 207);
-}
-
-input::placeholder {
-    color: rgba(57, 255, 189, 0.677);
-}
-
-#nickname1:focus {
-    box-shadow: 0px 0px 10px 5px #5d2eb3;
-}
-
-#nickname2:focus {
-    box-shadow: 0px 0px 10px 1px #f2dd57;
-}
-
-#start-game-button {
-    font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
-    height: 45px;
-    width: 170px;
-    border-radius: 6px;
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: 500;
-    background-color: aqua;
-    color: black;
-}
-
-#start-game-button:hover {
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.7);
 }
 
 .github-container {
@@ -142,10 +37,6 @@ input::placeholder {
 .github-container a {
     text-decoration: none;
     color: white;
-}
-
-.fa-github {
-    font-size: 2em;
 }
 
 .github-tooltip {
@@ -173,35 +64,10 @@ input::placeholder {
     opacity: 1;
 }
 
+.fa-github {
+    font-size: 2em;
+}
+
 .fa-github:hover {
     cursor: pointer;
-}
-
-.second-page-container {
-    display: none;
-}
-
-@media (max-width: 500px) {
-    #title {
-        margin-top: 60px;
-        font-size: 2.2em;
-        text-align: center;
-        word-spacing: 5px;
-        letter-spacing: 3px;
-    }
-
-    input {
-        width: 120px;
-        font-size: 1em;
-        font-weight: 500;
-    }
-    
-    #start-game-button {
-        font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
-        height: 40px;
-        width: 145px;
-        border-radius: 10px;
-        text-align: center;
-        font-size: 1em;
-    }
 }
