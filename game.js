@@ -135,11 +135,15 @@ const playerController = (function () {
     const secondPlayer = createPlayer("0", "Matthew");
     let currentPlayer = firstPlayer;
 
-    const play = (index) => {
-        if(gameBoard.getValueAt(index) !== " ") {
-            console.log("That cell is already occupied! Please select another one.");
-            return;
-        }
+    const play = (index, cell) => {
+        if(currentPlayer.getSelection() === 'X')
+            cell.textContent = currentPlayer.getSelection();
+        else
+            cell.textContent = 'O';
+        if(cell.textContent === "X")
+            cell.classList.add("letterX");
+        else
+            cell.classList.add("letterO");
 
         gameBoard.setValueAt(index, currentPlayer.getSelection());
         if(gameHandler.checkWin(currentPlayer.getSelection())) {
@@ -154,4 +158,22 @@ const playerController = (function () {
     };
 
     return { play };
+})();
+
+const PLAY = (function () {
+    const board = document.querySelector(".tic-tac-toe-board");
+    const boardChildren = Array.from(board.children);
+    const DOMcells = document.querySelectorAll(".tic-tac-toe-cell");
+    DOMcells.forEach(cell => {
+        cell.addEventListener("click", () => {
+            if(!cell.querySelector("p")) {
+                const newParagraph = document.createElement("p");
+                newParagraph.classList.add("cell-letter");
+                cell.appendChild(newParagraph);
+
+                const index = boardChildren.indexOf(cell);
+                playerController.play(index + 1, newParagraph);
+            }
+        });
+    });
 })();

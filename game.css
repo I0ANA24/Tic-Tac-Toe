@@ -44,10 +44,19 @@ body {
     border: 3px solid aqua;
     box-shadow: 0px 0px 15px rgb(63, 207, 207);
     border-radius: 8px;
+    position: relative;
 }
 
 .tic-tac-toe-cell:hover {
     cursor: pointer;
+}
+
+.cell-letter {
+    position: absolute;
+    font-size: 4em;
+    top: 50%;
+    left: 50%;;
+    transform: translate(-50%, -50%);
 }
 
 .restart-modal-reset {
@@ -132,6 +141,10 @@ body {
         font-size: 1.3em;
     }
 
+    .cell-letter {
+        font-size: 10vw;
+    }
+
     .restart-modal-reset {
         margin-bottom: 6vh;
     }
@@ -144,4 +157,6 @@ body {
     .modal p {
         font-size: 6vw;
     }
+
+    
 }
