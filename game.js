@@ -135,6 +135,13 @@ const playerController = (function () {
     const secondPlayer = createPlayer("0", "Matthew");
     let currentPlayer = firstPlayer;
 
+    const firstPlayerScore = document.getElementById("p1-score");
+    const drawsScore = document.getElementById("dr-score");
+    const secondPlayerScore = document.getElementById("p2-score");
+    let firstPlayerScoreValue = 0;
+    let drawsScoreValue = 0;
+    let secondPlayerScoreValue = 0;
+
     const play = (index, cell) => {
         if(currentPlayer.getSelection() === 'X')
             cell.textContent = currentPlayer.getSelection();
@@ -148,8 +155,17 @@ const playerController = (function () {
         gameBoard.setValueAt(index, currentPlayer.getSelection());
         if(gameHandler.checkWin(currentPlayer.getSelection())) {
             console.log(`Congratulations! ${currentPlayer.getName()} won!`);
+            if(currentPlayer.getSelection() === 'X') {
+                firstPlayerScoreValue++;
+                firstPlayerScore.textContent = firstPlayerScoreValue;
+            } else {
+                secondPlayerScoreValue++;
+                secondPlayerScore.textContent = secondPlayerScoreValue;
+            }
         } else if(gameHandler.checkDraw()) {
-            console.log(`Is a draw!`)
+            console.log(`Is a draw!`);
+            drawsScoreValue++;
+            drawsScore.textContent = drawsScoreValue;
         } else {
             currentPlayer = currentPlayer === firstPlayer ? secondPlayer : firstPlayer;
         }
@@ -159,6 +175,13 @@ const playerController = (function () {
 
     const restart = () => {
         currentPlayer = firstPlayer;
+
+        firstPlayerScore.textContent = 0;
+        drawsScore.textContent = 0;
+        secondPlayerScore.textContent = 0;
+        firstPlayerScoreValue = 0;
+        drawsScoreValue = 0;
+        secondPlayerScoreValue = 0;
     };
 
     return { play, restart };
