@@ -39,9 +39,25 @@ const gameBoard = (function () {
     };
 
     initBoard();
-    render();
 
-    return { setValueAt, getValueAt, render };
+    document.addEventListener("DOMContentLoaded", () => {
+        const firstPlayerNickname = sessionStorage.getItem("firstPlayerNickname");
+        const secondPlayerNickname = sessionStorage.getItem("secondPlayerNickname");
+
+        if(firstPlayerNickname) {
+            document.getElementById("p1").textContent = firstPlayerNickname;
+        } else {
+            document.getElementById("p1").textContent = "Nickname1";
+        }
+
+        if(secondPlayerNickname) {
+            document.getElementById("p2").textContent = secondPlayerNickname;
+        } else {
+            document.getElementById("p2").textContent = "Nickname2";
+        }
+    });
+
+    return { setValueAt, getValueAt, render};
 })();
 
 const gameHandler = (function () {
@@ -139,13 +155,3 @@ const playerController = (function () {
 
     return { play };
 })();
-
-playerController.play(5);
-playerController.play(3);
-playerController.play(7);
-playerController.play(9);
-playerController.play(6);
-playerController.play(1);
-playerController.play(8);
-playerController.play(2);
-playerController.play(4);
