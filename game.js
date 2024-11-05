@@ -196,9 +196,10 @@ const playerController = (function () {
             }
         });
 
-        if(modalO.classList.contains("aqua-color")) {
+        if(!modalO.classList.contains("aqua-color")) {
             modalX.classList.toggle("aqua-color");
             modalO.classList.toggle("aqua-color");
+            console.log("intra");
         }
     };
 
