@@ -168,6 +168,10 @@ const PLAY = (function () {
     const board = document.querySelector(".tic-tac-toe-board");
     const boardChildren = Array.from(board.children);
     const DOMcells = document.querySelectorAll(".tic-tac-toe-cell");
+
+    const modalX = document.getElementById("modalX");
+    const modalO = document.getElementById("modalO");
+
     DOMcells.forEach(cell => {
         cell.addEventListener("click", () => {
             if(!cell.querySelector("p")) {
@@ -177,6 +181,8 @@ const PLAY = (function () {
 
                 const index = boardChildren.indexOf(cell);
                 playerController.play(index + 1, newParagraph);
+                modalX.classList.toggle("aqua-color");
+                modalO.classList.toggle("aqua-color");
             }
         });
     });
@@ -192,5 +198,10 @@ const PLAY = (function () {
             }
         });
         playerController.restart();
+
+        if(modalO.classList.contains("aqua-color")) {
+            modalX.classList.toggle("aqua-color");
+            modalO.classList.toggle("aqua-color");
+        }
     });
 })();
