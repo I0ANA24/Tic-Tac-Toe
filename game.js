@@ -157,7 +157,11 @@ const playerController = (function () {
         gameBoard.render();
     };
 
-    return { play };
+    const restart = () => {
+        currentPlayer = firstPlayer;
+    };
+
+    return { play, restart };
 })();
 
 const PLAY = (function () {
@@ -187,5 +191,6 @@ const PLAY = (function () {
                 cell.removeChild(paragraph);
             }
         });
+        playerController.restart();
     });
 })();
