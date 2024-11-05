@@ -162,15 +162,44 @@ const playerController = (function () {
                 secondPlayerScoreValue++;
                 secondPlayerScore.textContent = secondPlayerScoreValue;
             }
+
+            newRound();
+            
         } else if(gameHandler.checkDraw()) {
             console.log(`Is a draw!`);
             drawsScoreValue++;
             drawsScore.textContent = drawsScoreValue;
+
+            newRound();
         } else {
             currentPlayer = currentPlayer === firstPlayer ? secondPlayer : firstPlayer;
         }
 
         gameBoard.render();
+    };
+
+    const newRound = () => {
+        currentPlayer = firstPlayer;
+
+        const board = document.querySelector(".tic-tac-toe-board");
+        const DOMcells = document.querySelectorAll(".tic-tac-toe-cell");
+    
+        const modalX = document.getElementById("modalX");
+        const modalO = document.getElementById("modalO");
+    
+        for(let i = 1; i <= 9; i++)
+            gameBoard.setValueAt(i, " ");
+        DOMcells.forEach(cell => {
+            if(cell.querySelector("p")) {
+                const paragraph = cell.querySelector("p");
+                cell.removeChild(paragraph);
+            }
+        });
+
+        if(modalO.classList.contains("aqua-color")) {
+            modalX.classList.toggle("aqua-color");
+            modalO.classList.toggle("aqua-color");
+        }
     };
 
     const restart = () => {
