@@ -176,4 +176,16 @@ const PLAY = (function () {
             }
         });
     });
+
+    const restartButton = document.getElementById("restart");
+    restartButton.addEventListener("click", () => {
+        for(let i = 1; i <= 9; i++)
+            gameBoard.setValueAt(i, " ");
+        DOMcells.forEach(cell => {
+            if(cell.querySelector("p")) {
+                const paragraph = cell.querySelector("p");
+                cell.removeChild(paragraph);
+            }
+        });
+    });
 })();
